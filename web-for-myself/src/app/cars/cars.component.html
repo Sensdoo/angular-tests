@@ -1,8 +1,16 @@
 <div class="row">
   <div class="col-xs-12">
-    <app-add-car (onAddCar)="addCar($event)"></app-add-car>
+    <app-add-car (carEmitter)="updateCarList($event)"></app-add-car>
     <hr>
-    <app-car *ngFor="let carItem of cars" [car]="carItem"></app-car>
+    <div class="list-group">
+      <app-car class="list-group-item" 
+              *ngFor="let carItem of cars" 
+              [car]="carItem"
+      >
+        <div class="alert alert-info">text</div>
+      </app-car>
+      
+    </div>
   </div>
   <div class="col-xs-12">
     {{ getDate() | date: 'medium' }}
