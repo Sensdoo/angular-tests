@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
+import { ForTestComponent } from './for-test/for-test.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AddCarComponent } from './add-car/add-car.component';
     AppComponent,
     CarsComponent,
     CarComponent,
-    AddCarComponent
+    AddCarComponent,
+    ForTestComponent
   ],
   imports: [
     BrowserModule,
