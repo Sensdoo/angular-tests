@@ -3,17 +3,16 @@ import { ProductService } from '../../service/product.service';
 import { Product } from '../../service/poduct';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-application',
+  templateUrl: './application.component.html',
+  styleUrls: ['./application.component.css']
 })
-export class AppComponent {
+export class ApplicationComponent {
 
   products: Array<Product> = [];
 
   constructor(private productService: ProductService) {
     this.products = this.productService.getProducts();
-    console.log(this.products);
   }
 
 }
