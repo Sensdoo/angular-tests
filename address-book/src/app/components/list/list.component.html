@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Street</th>
+      <th>House</th>
+      <th>Building</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let address of addresses">
+    <tr>
+      <td>{{address.id}}</td>
+      <td>{{address.street}}</td>
+      <td>{{address.house}}</td>
+      <td>{{address.building}}</td>
+      <td><a [routerLink]="['/address', address.id]">Navigate</a></td>
+    </tr>
+  </tbody>
+</table>
