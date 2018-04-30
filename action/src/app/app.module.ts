@@ -19,6 +19,9 @@ import { Error404Component } from './components/error404/error404.component';
 import { routing } from './app.routing';
 import { ProductDescriptionComponent } from './components/product-description/product-description.component';
 import { SellerInfoComponent } from './components/seller-info/seller-info.component';
+import { LoginGuard } from './login-guard';
+import { ChatComponent } from './components/chat/chat.component';
+import {LuxuryModule} from './modules/luxury/luxury.module';
 
 
 @NgModule({
@@ -35,16 +38,19 @@ import { SellerInfoComponent } from './components/seller-info/seller-info.compon
     ProductDetailComponent,
     Error404Component,
     ProductDescriptionComponent,
-    SellerInfoComponent
+    SellerInfoComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    LuxuryModule,
     routing
   ],
   providers: [
     ProductService,
+    LoginGuard,
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
