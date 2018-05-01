@@ -1,5 +1,10 @@
 <!-- <input type="text" class="form-control" [(ngModel)]="carName">
 <input type="text" class="form-control" [(ngModel)]="carYear"> -->
-<input type="text" class="form-control" #carNameInput>
+<!-- <input type="text" class="form-control" #carNameInput>
 <input type="text" class="form-control" #carYearInput>
-<button class="btn btn-primary" (click)="addCar(carNameInput, carYearInput)">Add car</button>
+<button class="btn btn-primary" (click)="addCar(carNameInput, carYearInput)">Add car</button> -->
+
+<div>
+  <input type="text" class="form-control" [ngStyle]="{marginBottom: '10px'}" [(ngModel)]="carName">
+  <button class="btn btn-primary" (click)="addCar()">Add</button> 
+</div>

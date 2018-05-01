@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { CarServiceService } from '../car-service.service';
 
 @Component({
   selector: 'app-add-car',
@@ -9,21 +10,28 @@ export class AddCarComponent implements OnInit {
 
   // carName = '';
   // carYear = 2017;
-  @Output() carEmitter = new EventEmitter<{name: string, year: number}>();
+  // @Output() carEmitter = new EventEmitter<{name: string, year: number}>();
 
-  constructor() { }
+  carName = '';
+
+  constructor(private carService: CarServiceService) { }
 
   ngOnInit() {
   }
 
-  addCar(carNameEl: HTMLInputElement, carYearEl: HTMLInputElement) {
-    this.carEmitter.emit({
-      name: carNameEl.value,
-      year: +carYearEl.value
-    });
-
-    carNameEl.value = '';
-    carYearEl.value = '2017';
+  addCar() {
+    this.carService.addCar(this.carName);
+    this.carName = '';
   }
+
+  // addCar(carNameEl: HTMLInputElement, carYearEl: HTMLInputElement) {
+  //   this.carEmitter.emit({
+  //     name: carNameEl.value,
+  //     year: +carYearEl.value
+  //   });
+
+  //   carNameEl.value = '';
+  //   carYearEl.value = '2017';
+  // }
 
 }

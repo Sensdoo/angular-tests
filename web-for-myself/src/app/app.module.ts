@@ -9,6 +9,7 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ForTestComponent } from './for-test/for-test.component';
+import { CarServiceService } from './car-service.service';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ForTestComponent } from './for-test/for-test.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CarServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

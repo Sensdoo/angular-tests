@@ -1,5 +1,40 @@
 <div class="container">
-  <app-cars></app-cars>
+  <!-- <app-cars></app-cars> -->
+  <!-- <div class="col-xs-4">
+    <app-add-car (carEvent)="addCarToList($event)"></app-add-car>
+    <div class="list-group">
+      <app-car *ngFor="let car of cars" [car]="car"></app-car>
+    </div>
+  </div> -->
+  
+  <div class="col-xs-8 col-xs-offset-2">
+    <form (ngSubmit)="submitForm(form)" #form="ngForm">
+      <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" id="email" name="email" ngModel required email #email="ngModel">
+        <p *ngIf="email.invalid && email.touched">Не верный email</p>
+      </div>
+      <div class="form-group" [ngClass]="{'has-error': pass.invalid && pass.touched}">
+        <label for="password">Пароль</label>
+        <input class="form-control" type="password" id="pass" name="password" ngModel required #pass="ngModel">
+        <p *ngIf="pass.invalid && pass.touched">Пароль не может быть пустым</p>
+      </div>
+      <div class="form-group">
+        <label for="country">Выберите страну</label>
+        <select class="form-control" id="country" name="country" [ngModel]="defaultCountry" required>
+          <option value="ru">Россия</option>
+          <option value="by">Белоруссия</option>
+          <option value="ua">Украина</option>
+        </select>
+      </div>
+      <div class="radio" *ngFor="let ans of answers">
+        <label>
+          <input type="radio" [value]="ans.type" name="answer" [ngModel]="defaultAnswer" required> {{ ans.text }}
+        </label>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Сохранить</button>
+    </form>
+  </div>
 </div>
 
 

@@ -1,3 +1,11 @@
-<label>model:</label> <h4 class="list-group-heading"> {{ car.name }}</h4>
+<!-- <label>model:</label> <h4 class="list-group-heading"> {{ car.name }}</h4>
 <p class="list-group-text">year: {{ car.year }} </p>
-<ng-content></ng-content>
+<ng-content></ng-content> -->
+
+<div [ngClass]="getClass()">
+    <h4 [ngStyle]="{marginBottom: '20px'}">{{ car.name }}</h4>
+    <div>
+        <button class="btn btn-primary" [disabled]="car.isSold" (click)="onAction('buy')">Buy</button>
+        <button class="btn btn-primary" [disabled]="!car.isSold" (click)="onAction('return')">Return</button>
+    </div>
+</div>

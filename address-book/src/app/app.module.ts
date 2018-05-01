@@ -10,6 +10,7 @@ import { AddressService } from './service/address.service';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import { AddressComponent } from './components/address/address.component';
+import { AddressDetailsComponent } from './components/address-details/address-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddressComponent } from './components/address/address.component';
     FooterComponent,
     HomeComponent,
     ListComponent,
-    AddressComponent
+    AddressComponent,
+    AddressDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,10 +7,22 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  @Input() car: {name: string, year: number};
+  @Input() car;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getClass() {
+    return {
+      'list-group-item-success': !this.car.isSold,
+      'list-group-item-danger': this.car.isSold,
+      'list-group-item': true
+    };
+  }
+
+  onAction(type: string) {
+    this.car.isSold = type === 'buy' ? true : false;
   }
 }
