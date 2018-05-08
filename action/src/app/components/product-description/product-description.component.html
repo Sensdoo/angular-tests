@@ -1,9 +1,14 @@
-<div>
-  <h2>Product Details</h2>
-  <h3>Title: {{ product.title }}</h3>
-  <h3>Description: {{ product.description }}</h3>
-  <h3>Price: {{ product.price }}</h3>
-</div>
+<input [value]="greeting" [attr.value]="greeting" (input)="onInputEvent($event)">
+<hr>
+<button (click)="flag = !flag">Toggle flag`s value</button>
+<p>Flag`s value: {{ flag }}</p>
+<p>span with *ngIf="flag": <span *ngIf="flag">Flag is true</span></p>
+<hr>
+<input type="text" placeholder="Enter stock symbol" [(ngModel)]="lastStockSymbol">
+<p>The value of lastStockSymbol is {{ lastStockSymbol }}</p>
+<hr>
+<h2>Observable events</h2>
+<input type="text" placeholder="placeholder" [formControl]="searchInput">
 
 
 

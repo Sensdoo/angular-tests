@@ -16,7 +16,7 @@ export class ProductService {
   getReviewsById(productId: number): Review[] {
     return reviews
       .filter((r => r.productId === productId))
-      .map(r => new Review(r.id, r.productId, <Date>Date.parse(r.timestamp), r.user, r.rating, r.comment));
+      .map(r => new Review(r.id, r.productId, <Date>r.timestamp, r.user, r.rating, r.comment));
   }
 }
 
@@ -43,7 +43,7 @@ const reviews = [
   {
     'id': 0,
     'productId': 0,
-    'timestamp': '2018-05-06T00:50:00+00:00',
+    'timestamp': new Date('2018-05-05T00:12+00:00'),
     'user': 'User 1',
     'rating': 5,
     'comment': 'Aenean vestibulum velit id placerrat posuere. Praesent... '
@@ -51,7 +51,7 @@ const reviews = [
   {
     'id': 1,
     'productId': 0,
-    'timestamp': '2018-05-06T00:52:00+00:00',
+    'timestamp': new Date('2018-05-05T00:16+00:00'),
     'user': 'User 2',
     'rating': 3,
     'comment': 'Aenean vestibulum velit id placerrat posuere. Praesent... '

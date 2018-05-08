@@ -10,8 +10,8 @@ import {SearchComponent} from './components/search/search.component';
 import {ProductItemComponent} from './components/product-item/product-item.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {CarouselComponent} from './components/carousel/carousel.component';
-import ApplicationComponent from './components/application/application.component';
 import {AppComponent} from './app.component';
+import ApplicationComponent from './components/application/application.component';
 
 export const  appComponents = [
   AppComponent,
@@ -26,6 +26,7 @@ export const  appComponents = [
   ProductDetailComponent,
   Error404Component,
   ProductDescriptionComponent,
+  ProductDetailComponent,
   SellerInfoComponent,
   ChatComponent
 ];

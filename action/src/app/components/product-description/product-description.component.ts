@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Product} from '../../service/poduct';
+import { Component } from '@angular/core';
 import {ProductService} from '../../service/product.service';
+import {FormControl} from '@angular/forms';
+import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'app-product-description',
@@ -9,7 +10,29 @@ import {ProductService} from '../../service/product.service';
 })
 export class ProductDescriptionComponent {
 
-  product: Product;
+  greeting = 'A value';
+  flag = false;
+  lastStockSymbol: string;
+  searchInput: FormControl = new FormControl('');
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {
+    setTimeout(() => {
+      this.lastStockSymbol = 'AAPL';
+    }, 5000);
+
+    this.searchInput.valueChanges
+      .debounceTime(500)
+      .subscribe(stock => this.getStockQuoteFromServer(stock));
+  }
+
+  onInputEvent({target}): void {
+
+    console.log(`The input property value = ${target.value}`);
+    console.log(`The input attribute value = ${target.getAttribute('value')}`);
+    console.log(`The greeting property value = ${this.greeting}`);
+  }
+
+  private getStockQuoteFromServer(stock: string) {
+    console.log(`The price of ${stock} is ${100 * Math.random()}`);
+  }
 }

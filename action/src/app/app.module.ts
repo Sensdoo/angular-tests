@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -13,11 +13,12 @@ import {appComponents} from './app-components';
 
 
 @NgModule({
-  declarations: [ ...appComponents ],
+  declarations: [ appComponents ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     LuxuryModule,
     routing
   ],

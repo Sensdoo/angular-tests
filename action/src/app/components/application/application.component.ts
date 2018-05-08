@@ -1,6 +1,4 @@
 import {Component, ViewEncapsulation} from '@angular/core';
-import { ProductService } from '../../service/product.service';
-import { Product } from '../../service/poduct';
 
 @Component({
   selector: 'app-application',
