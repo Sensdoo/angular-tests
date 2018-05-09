@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../service/poduct';
-import {ProductService} from '../../service/product.service';
+import { Product } from '../../service/poduct';
+import { ProductService } from '../../service/product.service';
+import { FormControl } from '@angular/forms';
+// import 'rxjs/add/operator/debounceTime';
+// import { FilterPipe } from '../../pipes/filter.pipe';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +12,16 @@ import {ProductService} from '../../service/product.service';
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
+  titleFilter: FormControl = new FormControl();
+  filterCriteria: string;
 
   constructor(private productsService: ProductService) {
     this.products = productsService.getProducts();
+    this.titleFilter.valueChanges
+      .debounceTime(2000)
+      .subscribe(
+        value => this.filterCriteria = value,
+        error => console.log(error));
   }
 
   ngOnInit() {

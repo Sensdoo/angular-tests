@@ -1,0 +1,10 @@
+<div class="parent">
+  <h2>Parent</h2>
+  <div>Greeting: <input type="text" [value]="greeting" (change)="greeting = $event.target.value"></div>
+  <div>User name: <input type="text" [value]="user.name" (change)="user.name = $event.target.value"></div>
+  <app-test-child [greeting]="greeting" [user]="user"></app-test-child>
+</div>
+<hr>
+<app-price-quoter (buy)="priceQuoteHandler($event)"></app-price-quoter>
+<br>
+<app-order [stock]="stockToBuy"></app-order>

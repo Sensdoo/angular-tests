@@ -36,6 +36,22 @@ const products = [
     'rating': 3.3,
     'description': 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     'categories': ['books']
+  },
+  {
+    'id': 2,
+    'title': 'Third Product',
+    'price': 159.99,
+    'rating': 4.0,
+    'description': 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    'categories': ['tools']
+  },
+  {
+    'id': 3,
+    'title': 'More Product',
+    'price': 1.99,
+    'rating': 5.0,
+    'description': 'This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    'categories': ['pen']
   }
 ];
 

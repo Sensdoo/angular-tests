@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import {ProductService} from '../../service/product.service';
 import {FormControl} from '@angular/forms';
+import {Http} from '@angular/http';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'app-product-description',
@@ -15,7 +18,7 @@ export class ProductDescriptionComponent {
   lastStockSymbol: string;
   searchInput: FormControl = new FormControl('');
 
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService, private http: Http) {
     setTimeout(() => {
       this.lastStockSymbol = 'AAPL';
     }, 5000);

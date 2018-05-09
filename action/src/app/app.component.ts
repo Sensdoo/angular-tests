@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private productService: ProductService, private _router: Router) {
     this.products = this.productService.getProducts();
-    console.log(this.products);
+    // console.log(this.products);
   }
 
   navigateToProductDetail() {

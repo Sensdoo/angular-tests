@@ -10,10 +10,14 @@ import { routing } from './app.routing';
 import { LoginGuard } from './login-guard';
 import {LuxuryModule} from './modules/luxury/luxury.module';
 import {appComponents} from './app-components';
-
+import { FilterPipe } from './pipes/filter.pipe';
+import { TestParentComponent } from './components/fortests/test-parent/test-parent.component';
+import { TestChildComponent } from './components/fortests/test-child/test-child.component';
+import { OrderComponent } from './components/fortests/order/order.component';
+import { PriceQuoterComponent } from './components/fortests/price-quoter/price-quoter.component';
 
 @NgModule({
-  declarations: [ appComponents ],
+  declarations: [ appComponents, FilterPipe, TestParentComponent, TestChildComponent, OrderComponent, PriceQuoterComponent ],
   imports: [
     BrowserModule,
     FormsModule,
