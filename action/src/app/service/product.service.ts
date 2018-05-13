@@ -18,6 +18,10 @@ export class ProductService {
       .filter((r => r.productId === productId))
       .map(r => new Review(r.id, r.productId, <Date>r.timestamp, r.user, r.rating, r.comment));
   }
+
+  getAllCategories(): string[] {
+    return ['Books', 'Electronics', 'Hardware'];
+  }
 }
 
 const products = [

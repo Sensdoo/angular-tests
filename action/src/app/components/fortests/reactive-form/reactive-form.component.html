@@ -1,14 +1,30 @@
-<form [formGroup]="formModel">
-  <div formGroupName="dateRange">
-    <input type="date" formControlName="from">
-    <input type="date" formControlName="to">
+<form [formGroup]="formModel" (ngSubmit)="onSubmit()" novalidate class="list-group">
+  <div class="list-group">
+    <label for="username" >Username: </label>
+    <input id="username" type="text" formControlName="username" class="list-group-item">
   </div>
-  <ul>
-    <li *ngFor="let e of formModel.get('emails'); let i = index">
-      <label>
-        <input [formControlName]="i">
-      </label>
-    </li>
-    <button type="button" (click)="addEmail()">Add Email</button>
-  </ul>
+  <span [hidden]="!formModel.hasError('required', 'username')" class="list-group-item-danger">
+      Username is required
+    </span>
+  <div class="list-group">
+    <label for="ssn" >SSN: </label>
+    <input id="ssn" type="text" formControlName="ssn" class="list-group-item">
+  </div>
+  <span [hidden]="!formModel.hasError('ssn', 'ssn')" class="list-group-item-danger">SSN is invalid</span>
+
+  <div formGroupName="passwordsGroup" class="list-group">
+    <div class="list-group">
+      <label for="password" >Password: </label>
+      <input id="password" type="password" formControlName="password" class="list-group-item">
+    </div>
+    <span [hidden]="!formModel.hasError('minlength', ['passwordsGroup', 'password'])" class="list-group-item-danger">
+        Password is too short
+      </span>
+    <div class="list-group">
+      <label for="pconfirm">Confirm Password: </label>
+      <input id="pconfirm" type="password" formControlName="pconfirm" class="list-group-item">
+    </div>
+    <span [hidden]="!formModel.hasError('equal', 'passwordsGroup')" class="list-group-item-danger">Password must be same</span>
+  </div>
+  <button type="submit">OK</button>
 </form>
