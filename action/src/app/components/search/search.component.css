@@ -5,3 +5,7 @@ label {
 h4 {
     text-align: center;
 }
+
+.list-group-header {
+  padding-bottom: 10px;
+}

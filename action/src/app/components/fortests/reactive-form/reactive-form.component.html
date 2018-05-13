@@ -1,0 +1,14 @@
+<form [formGroup]="formModel">
+  <div formGroupName="dateRange">
+    <input type="date" formControlName="from">
+    <input type="date" formControlName="to">
+  </div>
+  <ul>
+    <li *ngFor="let e of formModel.get('emails'); let i = index">
+      <label>
+        <input [formControlName]="i">
+      </label>
+    </li>
+    <button type="button" (click)="addEmail()">Add Email</button>
+  </ul>
+</form>

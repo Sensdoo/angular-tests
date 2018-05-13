@@ -15,9 +15,11 @@ import { TestParentComponent } from './components/fortests/test-parent/test-pare
 import { TestChildComponent } from './components/fortests/test-child/test-child.component';
 import { OrderComponent } from './components/fortests/order/order.component';
 import { PriceQuoterComponent } from './components/fortests/price-quoter/price-quoter.component';
+import { FormComponent } from './components/fortests/form/form.component';
+import { ReactiveFormComponent } from './components/fortests/reactive-form/reactive-form.component';
 
 @NgModule({
-  declarations: [ appComponents, FilterPipe, TestParentComponent, TestChildComponent, OrderComponent, PriceQuoterComponent ],
+  declarations: [ appComponents, FilterPipe, TestParentComponent, TestChildComponent, OrderComponent, PriceQuoterComponent, FormComponent, ReactiveFormComponent ],
   imports: [
     BrowserModule,
     FormsModule,
