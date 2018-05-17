@@ -7,10 +7,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListComponent } from './components/list/list.component';
 import { AddressService } from './service/address.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import { AddressComponent } from './components/address/address.component';
 import { AddressDetailsComponent } from './components/address-details/address-details.component';
+import { SearchComponent } from './components/search/search.component';
+import { AddressFilterPipe } from './pipes/address-filter.pipe';
 
 
 @NgModule({
@@ -21,11 +23,14 @@ import { AddressDetailsComponent } from './components/address-details/address-de
     HomeComponent,
     ListComponent,
     AddressComponent,
-    AddressDetailsComponent
+    AddressDetailsComponent,
+    SearchComponent,
+    AddressFilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [

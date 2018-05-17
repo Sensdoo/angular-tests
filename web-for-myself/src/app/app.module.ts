@@ -9,7 +9,10 @@ import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { ForTestComponent } from './for-test/for-test.component';
-import { CarServiceService } from './car-service.service';
+import {CarsService} from './cars.service';
+import { HomePageComponent } from './home-page/home-page.component';
+import { CarsPageComponent } from './cars-page/cars-page.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 
 @NgModule({
@@ -18,14 +21,17 @@ import { CarServiceService } from './car-service.service';
     CarsComponent,
     CarComponent,
     AddCarComponent,
-    ForTestComponent
+    ForTestComponent,
+    HomePageComponent,
+    CarsPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
     HttpModule
   ],
-  providers: [CarServiceService],
+  providers: [CarsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

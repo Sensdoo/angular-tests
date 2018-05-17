@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarServiceService } from './car-service.service';
-import { NgForm } from '@angular/forms';
+import {CarsService} from './cars.service';
 
 @Component({
   selector: 'app-root',
@@ -9,22 +8,68 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
 
-  // cars;
-  answers = [
-    {type: 'yes', text: 'Да'},
-    {type: 'no', text: 'Нет'}
+  cars: Car[] = [];
+  carName = '';
+  colors = [
+    'red',
+    'blue',
+    'green',
+    'pink',
+    'yellow',
+    'gray'
   ];
 
-  defaultCountry = 'ru';
-  defaultAnswer = 'no';
+  constructor(private carsService: CarsService) {}
 
-  constructor(private carService: CarServiceService) {}
+  ngOnInit(): void {}
 
-  ngOnInit() {
-    // this.cars = this.carService.cars;
+  loadCars() {
+    this.carsService.getCars()
+      .subscribe((cars: Car[]) => {
+        this.cars = cars;
+        console.log(cars);
+      });
   }
 
-  submitForm(form: NgForm) {
-    console.log(form);
+  addCar() {
+    this.carsService
+      .addCar(this.carName, this.getRandColor())
+      .subscribe((car: Car) => {
+        this.cars.push(car);
+      });
+    this.carName = '';
   }
+
+  getRandColor() {
+    const num = Math.round(Math.random() * (this.colors.length - 1));
+    return this.colors[num];
+  }
+
+  setColor(car: Car) {
+    this.carsService
+      .setColor(car, this.getRandColor())
+      .subscribe(data => console.log(data));
+  }
+
+  deleteCar(car: Car) {
+    this.carsService
+      .deleteCar(car)
+      .subscribe(() => {
+        this.cars = this.cars.filter(c => c.id !== car.id);
+      });
+  }
+
+  // getMT() {
+  //   this.carsService.mt()
+  //     .subscribe( response => {
+  //       console.log(response);
+  //     });
+  // }
+
+}
+
+interface Car {
+  id: number;
+  name: string;
+  color: string;
 }

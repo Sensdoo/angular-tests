@@ -1,0 +1,22 @@
+{
+  "cars": [
+    {
+      "name": "Ford",
+      "color": "red",
+      "year": 2017,
+      "id": 1
+    },
+    {
+      "name": "Volvo",
+      "color": "green",
+      "year": 2016,
+      "id": 2
+    },
+    {
+      "name": "Bmw",
+      "color": "blue",
+      "year": 2005,
+      "id": 3
+    }
+  ]
+}

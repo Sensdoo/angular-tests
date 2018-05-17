@@ -2,10 +2,17 @@
 <p class="list-group-text">year: {{ car.year }} </p>
 <ng-content></ng-content> -->
 
-<div [ngClass]="getClass()">
-    <h4 [ngStyle]="{marginBottom: '20px'}">{{ car.name }}</h4>
-    <div>
-        <button class="btn btn-primary" [disabled]="car.isSold" (click)="onAction('buy')">Buy</button>
-        <button class="btn btn-primary" [disabled]="!car.isSold" (click)="onAction('return')">Return</button>
-    </div>
-</div>
+<!--<div [ngClass]="getClass()">-->
+    <!--<h4 [ngStyle]="{marginBottom: '20px'}">{{ car.name }}</h4>-->
+    <!--<div>-->
+        <!--<button class="btn btn-primary" [disabled]="car.isSold" (click)="onAction('buy')">Buy</button>-->
+        <!--<button class="btn btn-primary" [disabled]="!car.isSold" (click)="onAction('return')">Return</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+<h3>Car ID: {{ id }}</h3>
+<h3>Car: {{ name }}</h3>
+<h3 [ngStyle]="{color: color}">Car color: {{ color }}</h3>
+<h3>Car year: {{ year }}</h3>
+<br>
+<button (click)="openLadaPage()">Lada</button>

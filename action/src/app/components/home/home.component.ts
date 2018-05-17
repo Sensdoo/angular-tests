@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(private productsService: ProductService) {
     this.products = productsService.getProducts();
     this.titleFilter.valueChanges
-      .debounceTime(1000)
+      .debounceTime(500)
       .subscribe(
         value => this.filterCriteria = value,
         error => console.log(error));

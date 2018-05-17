@@ -1,0 +1,32 @@
+{
+  "cars": [
+    {
+      "car": {
+        "id": 1,
+        "name": "Ford",
+        "color": "yellow"
+      }
+    },
+    {
+      "car": {
+        "name": "Volvo",
+        "color": "yellow",
+        "id": 2
+      }
+    },
+    {
+      "car": {
+        "name": "BMWS",
+        "color": "yellow",
+        "id": 3
+      }
+    },
+    {
+      "car": {
+        "name": "Lada",
+        "color": "yellow",
+        "id": 4
+      }
+    }
+  ]
+}

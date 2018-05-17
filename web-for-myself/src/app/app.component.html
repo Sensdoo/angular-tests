@@ -1,40 +1,33 @@
-<div class="container">
-  <!-- <app-cars></app-cars> -->
-  <!-- <div class="col-xs-4">
-    <app-add-car (carEvent)="addCarToList($event)"></app-add-car>
-    <div class="list-group">
-      <app-car *ngFor="let car of cars" [car]="car"></app-car>
-    </div>
-  </div> -->
-  
-  <div class="col-xs-8 col-xs-offset-2">
-    <form (ngSubmit)="submitForm(form)" #form="ngForm">
-      <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
-        <label for="email">Email</label>
-        <input class="form-control" type="text" id="email" name="email" ngModel required email #email="ngModel">
-        <p *ngIf="email.invalid && email.touched">Не верный email</p>
-      </div>
-      <div class="form-group" [ngClass]="{'has-error': pass.invalid && pass.touched}">
-        <label for="password">Пароль</label>
-        <input class="form-control" type="password" id="pass" name="password" ngModel required #pass="ngModel">
-        <p *ngIf="pass.invalid && pass.touched">Пароль не может быть пустым</p>
-      </div>
-      <div class="form-group">
-        <label for="country">Выберите страну</label>
-        <select class="form-control" id="country" name="country" [ngModel]="defaultCountry" required>
-          <option value="ru">Россия</option>
-          <option value="by">Белоруссия</option>
-          <option value="ua">Украина</option>
-        </select>
-      </div>
-      <div class="radio" *ngFor="let ans of answers">
-        <label>
-          <input type="radio" [value]="ans.type" name="answer" [ngModel]="defaultAnswer" required> {{ ans.text }}
-        </label>
-      </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Сохранить</button>
-    </form>
+<nav class="navbar navbar-expand-md bg-light navbar-light" style="margin-bottom: 20px">
+  <!--<div class="container-fluid">-->
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" href="#" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" href="#" [routerLink]="'/cars'">Cars</a>
+      </li>
+    </ul>
+  <!--</div>-->
+</nav>
+<div class="row">
+  <div class="col-md-10">
+    <router-outlet></router-outlet>
   </div>
 </div>
 
-
+<!--<div class="col-xs-8 col-xs-offset-2">-->
+  <!--<input type="text" class="form-control" [(ngModel)]="carName">-->
+  <!--<hr>-->
+  <!--<button class="btn btn-success" (click)="addCar()">Add Car</button>-->
+  <!--<button class="btn btn-primary" (click)="loadCars()">Load cars</button>-->
+  <!--<hr>-->
+  <!--<ul class="list-group">-->
+    <!--<li class="list-group-item" *ngFor="let car of cars">-->
+      <!--<span class="badge" [ngStyle]="{background: car.color}">{{ car.id }}</span>-->
+      <!--{{ car.name }}-->
+      <!--<button class="btn btn-sm btn-info" (click)="setColor(car)">Change</button>-->
+      <!--<button class="btn btn-sm btn-danger" (click)="deleteCar(car)">Delete</button>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->

@@ -1,0 +1,14 @@
+<h2>Cars Page</h2>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let car of cars">
+    <span class="badge" style="background: lightblue">
+      {{ car.id }}
+    </span>
+    <a [routerLink]="['/cars', car.id, car.name]"
+       [queryParams]="{year: car.year, color: car.color}"
+    > {{ car.name }}</a>
+  </li>
+</ul>
+<hr>
+<button class="btn btn-primary" (click)="openHomePage()">Open Home Page</button>
