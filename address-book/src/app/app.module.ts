@@ -13,6 +13,7 @@ import { AddressComponent } from './components/address/address.component';
 import { AddressDetailsComponent } from './components/address-details/address-details.component';
 import { SearchComponent } from './components/search/search.component';
 import { AddressFilterPipe } from './pipes/address-filter.pipe';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { AddressFilterPipe } from './pipes/address-filter.pipe';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     routing
   ],
   providers: [

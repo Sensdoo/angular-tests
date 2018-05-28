@@ -14,15 +14,27 @@ export class ListComponent implements OnInit {
   addresses: Address[];
   searchInput: FormControl = new FormControl();
   filterCriteria: string;
+  address = {
+    name: 'name',
+    name2: 'name2'
+  };
 
   constructor(private addressService: AddressService) {
   }
 
   ngOnInit() {
-    this.addresses = this.addressService.getAddresses();
-    this.searchInput
-      .valueChanges
-      .subscribe(value => this.filterCriteria = value);
+    this.getAddresses();
+    // this.addresses = this.addressService.getAddresses();
+    // this.searchInput
+    //   .valueChanges
+    //   .subscribe(value => this.filterCriteria = value);
   }
 
+  getAddresses(): void {
+    this.addressService.getAddresses()
+      .subscribe(addresses => {
+        // console.log(addresses);
+        this.addresses = addresses;
+      });
+  }
 }

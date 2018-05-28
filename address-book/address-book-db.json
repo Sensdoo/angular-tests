@@ -1,0 +1,15 @@
+{
+  "addresses": [
+    { "id": 1, "street": "Ударников", "house": 17, "building": 1 },
+    { "id": 2, "street": "Ударников", "house": 18, "building": 1 },
+    { "id": 3, "street": "Ударников", "house": 19, "building": 1 },
+    { "id": 4, "street": "Ударников", "house": 21, "building": 1 },
+    { "id": 5, "street": "Ударников", "house": 22, "building": 1 },
+    { "id": 6, "street": "Коммуны", "house": 42, "building": 1 },
+    { "id": 7, "street": "Коммуны", "house": 44, "building": 1 },
+    { "id": 8, "street": "Коммуны", "house": 44, "building": 2 },
+    { "id": 9, "street": "Осипенко", "house": 3, "building": 1 },
+    { "id": 10, "street": "Осипенко", "house": 4, "building": 1 },
+    { "id": 11, "street": "Осипенко", "house": 5, "building": 1 }
+  ]
+}

@@ -18,7 +18,7 @@ export class AddressDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.address = this.addressService.getAddress(this.addressID);
+    // this.address = this.addressService.getAddress(this.addressID);
   }
 
 }

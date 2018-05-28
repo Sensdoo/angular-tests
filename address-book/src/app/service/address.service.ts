@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
 import {Address} from './address';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AddressService {
 
-  addresses: Address[] = [
-    {id: 1, street: 'Udarnikov', house: 1, building: 1},
-    {id: 2, street: 'Lazo', house: 34, building: 2},
-    {id: 3, street: 'Osipenko', house: 11, building: 4},
-    {id: 4, street: 'Коммуны', house: 6, building: 6},
-    {id: 5, street: 'Косыгина', house: 21, building: 2},
-    {id: 6, street: 'Ириновский', house: 16, building: 1},
-  ];
+  private url = 'http://localhost:3000/addresses';
+  private httpOption = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  };
+  addresses = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAddresses(): Address[] {
-    return this.addresses;
+  getAddresses(): Observable<Address[]> {
+    return this.http.get<Address[]>(this.url, this.httpOption);
   }
 
-  getAddress(id: number): Address {
-    return this.addresses.find((item) => item.id === id);
-  }
+  // getAddress(id: number): Address {
+  //   return this.addresses.find((item) => item.id === id);
+  // }
 
   getAllStreets(): string[] {
     const streets = [];
