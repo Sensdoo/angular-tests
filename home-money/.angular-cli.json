@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "devglan-angular-example"
+    "name": "home-money"
   },
   "apps": [
     {
@@ -17,10 +17,11 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "sens",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "styles.scss",
+        "./assets/vendor.css",
+        "./assets/theme.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -56,7 +57,6 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {
-    }
+    "component": {}
   }
 }

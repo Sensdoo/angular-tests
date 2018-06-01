@@ -1,0 +1,4 @@
+
+добавить скрипт в package.json
+// todo npm i --save-dev concurrently
+"dev": "concurrently --kill-others \"npm run start\" \"npm run server\""
