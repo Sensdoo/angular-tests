@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {AddressService} from '../../service/address.service';
+import {AddressService} from '../../../shared/service/address.service';
 
 @Component({
   selector: 'app-search',

@@ -1,39 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { ListComponent } from './components/list/list.component';
-import { AddressService } from './service/address.service';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {routing} from './app.routing';
-import { AddressComponent } from './components/address/address.component';
-import { AddressDetailsComponent } from './components/address-details/address-details.component';
-import { SearchComponent } from './components/search/search.component';
-import { AddressFilterPipe } from './pipes/address-filter.pipe';
-import {HttpClientModule} from '@angular/common/http';
+import { AddressService } from './shared/service/address.service';
+import {AppRoutingModule} from './app-routing.module';
+import {AuthModule} from './auth/auth.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    HomeComponent,
-    ListComponent,
-    AddressComponent,
-    AddressDetailsComponent,
-    SearchComponent,
-    AddressFilterPipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    routing
+    AppRoutingModule,
+    AuthModule
   ],
   providers: [
     AddressService

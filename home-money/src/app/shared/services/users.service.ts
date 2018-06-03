@@ -7,7 +7,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UsersService {
 
-  private userUrl = 'http://192.168.1.39:3000/users';
+  // private userUrl = 'http://192.168.1.39:3000/users';
+  private userUrl = 'http://10.0.0.20:3000/users';
 
   constructor(private http: HttpClient) {}
 

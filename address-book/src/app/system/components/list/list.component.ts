@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AddressService} from '../../service/address.service';
-import {Address} from '../../service/address';
+import {AddressService} from '../../../shared/service/address.service';
+import {Address} from '../../../shared/service/address';
 import {FormControl} from '@angular/forms';
 import 'rxjs/add/operator/debounceTime';
 
@@ -14,6 +14,7 @@ export class ListComponent implements OnInit {
   addresses: Address[];
   searchInput: FormControl = new FormControl();
   filterCriteria: string;
+  date = new Date();
   address = {
     name: 'name',
     name2: 'name2'

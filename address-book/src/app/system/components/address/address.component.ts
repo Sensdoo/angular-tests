@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {AddressService} from '../../service/address.service';
+import {AddressService} from '../../../shared/service/address.service';
 import {ActivatedRoute} from '@angular/router';
-import {Address} from '../../service/address';
+import {Address} from '../../../shared/service/address';
 
 @Component({
   selector: 'app-address',

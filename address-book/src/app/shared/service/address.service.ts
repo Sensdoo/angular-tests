@@ -6,7 +6,8 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class AddressService {
 
-  private url = 'http://localhost:3000/addresses';
+  // private url = 'http://192.168.1.39:3000/addresses';
+  private url = 'http://10.0.0.20:3000/addresses';
   private httpOption = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json'})
   };

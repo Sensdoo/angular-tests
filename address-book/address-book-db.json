@@ -11,5 +11,12 @@
     { "id": 9, "street": "Осипенко", "house": 3, "building": 1 },
     { "id": 10, "street": "Осипенко", "house": 4, "building": 1 },
     { "id": 11, "street": "Осипенко", "house": 5, "building": 1 }
+  ],
+  "entrances": [
+    { "id": 1, "access": "Открыто", "number": 1, "addressId": 1},
+    { "id": 2, "access": "Есть ключ", "number": 1, "addressId": 2},
+    { "id": 3, "access": "Аварийка", "number": 1, "addressId": 3},
+    { "id": 4, "access": "Заварено", "number": 2, "addressId": 3},
+    { "id": 5, "access": "Открыто", "number": 3, "addressId": 3}
   ]
 }
