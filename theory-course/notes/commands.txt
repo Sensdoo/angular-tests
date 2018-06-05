@@ -1,0 +1,8 @@
+ng g c название компонета -> создание компонета с помощью angular-cli
+ng g m название компонета -> создание модуля с помощью angular-cli
+ng g s название компонета -> создание сервиса с помощью angular-cli
+  флаги:
+  --spec=false -> не создается файл *.spec.ts
+
+npm i bootstrap --save -> установка bootstrap,
+  в angular-cli в поле styles добавить "../node_modules/bootstrap/dist/css/bootstrap.min.css"

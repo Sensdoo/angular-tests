@@ -1,0 +1,24 @@
+angular-cli -> настройки angular-cli
+editorconfig -> общие настройки стиля кода для редактора(в данном случаи для WebStorm)
+gitignore -> определяет что не будет копироваться на github
+karma.conf.js -> конфиг модуля karma отвечающего за тестирование
+package.json -> определяет необходимые зависимости для webpack и скрипты для npm
+protractor.conf.js -> e2e (end to end) тестирование
+tsconfig.json -> конфиг для компиляции typescript
+tslint ->  правила форматирования и стилизация кода для typescript и проекта в целом
+
+src/ ->
+  favicon.ico - иконка
+  index.html -> Главная html-страница приложения
+  main.ts -> файл запускающий приложение, так же в нем определено состояние приложения(разработка или production)
+  polyfills.ts -> подключение необходимых библиотек
+  styles.css -> основной фаил стилей приложения
+  test.ts -> тестирования
+  tsconfig.app.json -> дополнительные настройки для компиляции typescript, наследуется от tsconfig.json
+  tsconfig.spec.json -> для тестирования tsconfig.app.json
+  typings.d.ts -> доп. вспомогательный файл для typescript
+
+src/assets -> для статических данных приложения
+
+src/app/ -> исходный код приложения
+
