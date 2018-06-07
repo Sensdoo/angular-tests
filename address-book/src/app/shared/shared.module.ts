@@ -1,8 +1,15 @@
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [ReactiveFormsModule, FormsModule],
-  exports: [ReactiveFormsModule, FormsModule]
+  imports: [
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule
+  ]
 })
-export class SharedModule {}
+export class SharedModule { }

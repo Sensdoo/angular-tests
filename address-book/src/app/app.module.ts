@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
-import { AddressService } from './shared/service/address.service';
-import {AppRoutingModule} from './app-routing.module';
-import {AuthModule} from './auth/auth.module';
-
+import { SystemModule } from './system/system.module';
+import { AppRoutingModule } from './app-routing.module';
+import { StreetService } from './shared/services/street.service';
+import { AddressService } from './shared/services/address.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import {AuthModule} from './auth/auth.module';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthModule
+    SystemModule
   ],
   providers: [
+    StreetService,
     AddressService
   ],
   bootstrap: [AppComponent]
